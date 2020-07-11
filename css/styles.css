@@ -1,0 +1,12 @@
+body {
+    font-family: "Ubuntu", sans-serif;
+}
+
+.container-fluid {
+    background-color:;
+}
+.jumbotron {
+    margin: 0;
+    padding: 5px 0;
+    background-image: linear-gradient(to right, #a52609d4, #572e228e,#040101c6);
+}

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap CSS-->
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
@@ -15,33 +15,75 @@
     
     <!-- Local CSS -->
     <link rel="stylesheet" href="css/styles.css" />
-
+<!--
+    <style>
+        .container {
+            border: solid blue;
+            
+        }
+        .row {
+            border: solid yellow;
+        }
+        .row div {
+            border: solid lightgreen;
+        }
+    </style>
+-->
     <title>Spock - CV19 Predictive Population Analyzer</title>
 </head>
 <body>
+    <!-- Top Nav -->
+    <div class="container-fluid">
+        <div class="row my-1">
+            <div class="col-sm ml-sm-5"><a href="index.html"><img src="/img/logo-src01-30.png" class="img-fluid"></a> Spocks Best Guess</div>
+            <div class="col-sm-auto ">CV-19 Predictive Charts</div>    
+            <div class="col text-sm-right mr-sm-5">Top Right</div>
+        </div>
+    </div>    
     <!-- Header -->
     <header class="jumbotron jumbotron-fluid">
         <div class="container">
             <div class="row">
-                <div class="col">
-                    .....
+                <div class="col-4 col-sm-3 col-md-2 align-self-center">
+                    <a href="index.html"><img src="img/logo-src02.png" class="img-fluid"></a> 
                 </div>
             </div>
-        </div>
+        </div>    
     </header>
-    
+
     <!-- Site Navigation -->
-    <nav class="navbar sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-           
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#spockNavbar" aria-controls="spockNavbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" href="#">SBG <img src="img/logo-src01-30.png" class="img-fluid"> </a>
+        
+            <div class="collapse navbar-collapse" id="spockNavbar">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+            </div>
         </div>
-    </nav>
+      </nav>
     
     <!-- Page Body -->
     <div class="container">
         <div class="row row-content">
             <div class="col">
-                ......
+                Body
             </div>
         </div>
     </div>
@@ -50,11 +92,16 @@
     <footer class="site-footer">
         <div class="container">
             <div class="row">
-                <div class="col-4 col-sm-2 offset-1">
-                    .....
-                </div>
+                <div class="col-sm"> Footer Left </div>
+                <div class="col-sm col-sm-auto">Footer Center</div>
+                <div class="col-sm text-sm-right">Footer Right</div>
             </div>
         </div>
     </footer>
+
+    <!-- jQuery must come first, then Popper.js, then the Bootstrap JavaScript plugins.-->
+    <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 </body>
 </html>
