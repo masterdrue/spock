@@ -1,15 +1,6 @@
 body {
   font-family: "Ubuntu", sans-serif; }
 
-canvas {
-  display: inline; }
-
-.site-footer {
-  z-index: 100; }
-
-.top-mid {
-  border-radius: 10px; }
-
 .jumbotron {
   margin: 0;
   padding: 5px 0;
