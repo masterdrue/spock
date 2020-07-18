@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
+    <meta name="author" content="Drue McCombs">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- build:css css/main.css -->
@@ -12,15 +13,15 @@
     <!-- endbuild -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu|Open+Sans" />
     
-    <title>Spock - CV19 Predictive Analyzer</title>
+    <title>CV19 Data Toolbox</title>
 </head>
 <body>
+
     <!-- Top Row -->
     <div class="container-fluid">
         <div id="topgrp" class="row my-1">
-            <div class="col-sm ml-sm-5"><a href="index.html"><img src="/img/logo-src01-30.png" class="img-fluid"></a> CV-19 Dashboard Analyzer</div>
-            <div class="col-sm-auto">
-                
+            <div class="col-sm ml-sm-5"><a href="index.html"><img src="/img/logo-src01-30.png" class="img-fluid"></a> CV-19 Toolbox</div>
+                <div class="col-sm">
                     <div class="btn-group">
                         <button class="btn btn-secondary btn-sm" type="button">
                           COVID-19 Command
@@ -32,16 +33,16 @@
                             <a class="dropdown-item" href="#cardgrp">Card Group</a>
                             <a class="dropdown-item" href="#tabgrp">Data Charts</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Coming Soon</a>
+                            <a class="dropdown-item" href="#contact">Contact Us</a>
                         </div>
                     </div>
-                
-            </div>    
-            <div class="col text-right mr-sm-5">
-                <a role="button" id="loginModalButton"><i class="fa fa-sign-in"></i> Login | Register</a>
+                </div>    
+            <div class="col-auto text-right mr-sm-5">
+                <a id="loginModalButton" role="button"><i class="fa fa-sign-in"></i> Login | Register</a>
             </div>
         </div>
-    </div>    
+    </div>
+
     <!-- Login Modal Start -->
     <div id="loginModal" class="modal fade" role="dialog">
         <div class="modal-dialog" role="document">
@@ -85,13 +86,13 @@
         <div class="container d-none d-sm-block">
             <div class="row">
                 <div id="header-banner" class="col-sm-auto col-md m-3">
-                    Left
+                    <p class="text-white" aria-placeholder="Left Placeholder"></p>
                 </div>
                 <div class="col-4 col-sm-3 col-md-2 align-self-center">
                    <a href="index.html"><img src="img/logo-src02.png" class="img-fluid"></a>
                 </div>
                 <div id="header-banner" class="col-sm-auto col-md m-3">
-                    Right
+                    <p class="text-right text-white" aria-placeholder="Right Placeholder"></p>
                 </div>
             </div>
             
@@ -100,31 +101,35 @@
 
     <!-- Site Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-        <div class="container">
+        <div id="topgrp" class="container">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#spockNavbar" aria-controls="spockNavbar" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
         
             <div class="collapse navbar-collapse" id="spockNavbar">
-            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="#">Data Charts</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link " href="#" tabindex="-1" aria-disabled="true">Contact</a>
-                </li>
-               
-            </ul>
-            <div class="col"> <button id="btnDashboard" class="btn btn-danger">
-                Access Dashboard</button>
-            </div>
-            <a class="navbar-brand" href="#">SBG <img src="img/logo-src01-30.png" class="img-fluid"> </a>
+                
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item active">
+                    <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#cardgrp">Card Group</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link " href="#tabgrp">Data Charts</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="#contact">Contact Us</a>
+                    </li>
+                </ul>
+                <div class="col nav justify-content-center mr-3">
+                    <button id="btnDashboard" class="btn btn-danger"> 
+                    Activate Dashboard</button>
+                </div>
+            <img src="img/logo-src01-30.png" class="navbar-brand img-fluid d-none d-lg-block" alt="logo">
             <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Search</button>
+                <input class="form-control mr-sm-2 d-none d-lg-block" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-sm btn-outline-danger my-2 my-sm-0 d-none d-lg-block" type="submit">Search</button>
             </form>
             </div>
         </div>
@@ -133,13 +138,11 @@
     <!-- Dashboard Body -->
     <div class="container-fluid bg-dark">
         <div class="row row-content">
-            <div id="dashboard" class="col collapse">
-                
+            <div id="dashboard" class="col collapse">                
                 <iframe class="hopkinsDashBoard d-none d-lg-block" src="https://www.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6"></iframe>
-                <iframe class="hopkinsDashBoard d-block d-sm-block d-lg-none " src="https://www.arcgis.com/apps/opsdashboard/index.html#/85320e2ea5424dfaaa75ae62e5c06e61"></iframe>
-               
+                <iframe class="hopkinsDashBoard d-block d-sm-block d-lg-none " src="https://www.arcgis.com/apps/opsdashboard/index.html#/85320e2ea5424dfaaa75ae62e5c06e61"></iframe>            </div>
             </div>
-        </div>
+        </div>   
     </div>  
     
     <!-- Card Group -->
@@ -148,63 +151,74 @@
             <div class="col-sm mt-3">
                 <div class="card-deck">
                     <div class="card">
-                      <img class="card-img-top" src="img/card-cap.svg" alt="Card image cap">
-                      <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                      <img class="card-img-top img-fluid" src="img/cap-cv-lg-min.png" alt="Corona Virus - The Global Impact">
+                        <div class="card-body">
+                            <h5 class="card-title">Corona Virus - The Global Impact</h5>
+                            <p class="card-text">Join the crusade and find out how you can support the cause. Sign up Today!</p>
+                            <a class="btn btn-sm btn-secondary" role="button" href="http://www.healthdata.org/covid" target="_blank">Learn More</a>
+                        </div>
+                        <div class="card-footer text-center">
+                            <small class="text-muted">Last updated <span id="randomValueLeft"></span> mins ago</small>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <a href="https://nextstrain.org/ncov/global?l=radial"><img class="card-img-top img-fluid" src="img/cap-gen-lg.png" alt="Genomic Epidemiology of Novel Coronacirus - Global Subsampling"></a>
+                        <div class="card-body">
+                        <h5 class="card-title">Genomic Epidemiology</h5>
+                        <p class="card-text">Learn more about the genomes sampled between Dec 19 and Jul 2020.</p>
+                        
+                         <a class="btn btn-sm btn-secondary" role="button" href="https://nextstrain.org/ncov/global?l=radial" target="_blank">Click Here</a>
                       </div>
-                      <div class="card-footer">
-                        <small class="text-muted">Last updated 3 mins ago</small>
+                      <div class="card-footer text-center">
+                        <small class="text-muted">Last updated <span id="randomValueMid"></span> mins ago</small>
                       </div>
                     </div>
                     <div class="card">
-                      <img class="card-img-top" src="img/card-cap.svg" alt="Card image cap">
+                      <img class="card-img-top img-fluid" src="img/cap-trans-lg.jpg" alt="Coronavirus Transmission">
                       <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                        <h5 class="card-title">CV-19 Transmission Modeling</h5>
+                        <p class="card-text">Watch the transmission timeline and progression of Coronavirus to the USA.</p>
+                        <button id="transModalButton" role="button" class="btn btn-sm btn-secondary">
+                            Launch Media
+                          </button>
                       </div>
-                      <div class="card-footer">
-                        <small class="text-muted">Last updated 3 mins ago</small>
-                      </div>
-                    </div>
-                    <div class="card">
-                      <img class="card-img-top" src="img/card-cap.svg" alt="Card image cap">
-                      <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                      </div>
-                      <div class="card-footer">
-                        <small class="text-muted">Last updated 3 mins ago</small>
+                      <div class="card-footer text-center">
+                        <small class="text-muted">Last updated <span id="randomValueRight"></span> mins ago</small>
                       </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>    
-         <!--    
-        <div class="row row-content">
-                <div class="col-sm mt-lg-5">
-                Here Left Top
-                </div>
-                <div class="col-sm mt-lg-5">
-                Here Right Top
-                </div>
+    </div>
+
+    <!-- Transmission Modal -->
+    <div class="modal fade" id="transModal" tabindex="-1" role="dialog" aria-labelledby="transModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header bg-dark text-white">
+              <h5 class="modal-title" id="transModalLabel">Covid-19 Transmission Paths</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
             </div>
-            <div class="row row-content">
-                <div class="col-sm">
-                Here Left Bottom     
-                </div>
-                <div class="col-sm">
-                Here Right Bottom    
-                </div>
+            <div class="modal-body">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/uc6dWsZ0IBw" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; allowfullscreen"></iframe>
+                  </div> 
             </div>
-        -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
                    
      <!-- Start of Tabs -->
-    <div class="container my-5"> 
+    <div class="container my-5 d-none d-lg-block"> 
         <div id="tabgrp" class="row row-content">
             <div class="col-sm">
                 <h3>Covid-19 Data Charts</h3>
+                <p>*** Data provided by multiple sources</p>
                 
                     <ul class="nav nav-tabs">
                         <li class="nav-item"><a class="nav-link active" href="#totalCases" role="tab" data-toggle="tab">Total Cases</a></li>
@@ -223,28 +237,151 @@
                     </div>
 
                     <div role="tabpanel" class="tab-pane fade" id="fatalityLog">
-                        <h4>Confirmed Covid-19 Deaths and Rapid Increase <small></small></h4>
                         <p class="d-none d-sm-block"></p>
                         <iframe src="https://ourworldindata.org/grapher/covid-confirmed-deaths-since-5th-death" loading="lazy" style="width: 100%; height: 600px; border: 0px none;"></iframe>
                     </div>
 
                     <div role="tabpanel" class="tab-pane fade" id="confirmedCases">    
-                        <h4>Case Timeline <small></small></h4>
-                        <p class="d-none d-sm-block"></p>
                         <div class="flourish-embed flourish-chart" data-src="story/230110"></div>
                     </div>    
                 </div>
             </div>
         </div>
-    </div>    
+    </div>
+
+    <!-- Accordian replaces tabs for small viewports-->
+    <div class="container my-5 d-block d-sm-block d-lg-none">
+        <div id="accordion">
+            <div class="card">
+                <div role="tab" class="card-header">
+                    <h4>
+                        <a data-toggle="collapse" data-target="#totalCases-a">
+                            Total Cases<small></small>
+                        </a>
+                    </h4>
+                    <div class="collapse show" id="totalCases-a" data-parent="#accordion">
+                        <div class="card-body">
+                            <iframe src="https://ourworldindata.org/grapher/total-covid-deaths-region" loading="lazy" style="width: 100%; height: 600px; border: 0px none;"></iframe>
+                        </div>
+                    </div>
+                </div>    
+            </div>
+            <div class="card">
+                <div role="tab" class="card-header">
+                    <h4>
+                        <a class="collapsed" data-toggle="collapse" data-target="#byCountry-a">
+                        By Country<small></small>
+                        </a>
+                    </h4>
+                    <div class="collapse" id="byCountry-a" data-parent="#accordion">
+                        <div class="card-body">    
+                            <div class="flourish-embed flourish-chart" data-src="story/230085"></div>
+                        </div>
+                    </div>    
+                </div>
+            </div>
+            <div class="card">
+                <div role="tab" class="card-header">
+                    <h4>
+                        <a class="collapsed" data-toggle="collapse" data-target="#fatalityLog-a">
+                        Fatality Log<small></small>
+                        </a>
+                    </h4>
+                    <div class="collapse" id="fatalityLog-a" data-parent="#accordion">
+                        <div class="card-body">
+                            <iframe src="https://ourworldindata.org/grapher/covid-confirmed-deaths-since-5th-death" loading="lazy" style="width: 100%; height: 600px; border: 0px none;"></iframe>
+                        </div>
+                    </div>    
+                </div>
+            </div>
+            <div class="card">
+                <div role="tab" class="card-header">
+                    <h4>
+                        <a class="collapsed" data-toggle="collapse" data-target="#confirmedCases-a">
+                        Confirmed Cases <small></small>
+                        </a>
+                    </h4>
+                    <div class="collapse" id="confirmedCases-a" data-parent="#accordion">
+                        <div class="card-body">
+                            <div class="flourish-embed flourish-chart" data-src="story/230110"></div>
+                        </div>
+                    </div>    
+                </div>    
+            </div>    
+        </div>
+    </div>
+
+    <!-- Contact us -->
+    <div class="container">
+        <div class="row row-content">
+            <div id="contact" class="col-12">
+                <h3>Tell us how you really feel</h3>
+                <hr />
+            </div>
+            <div class="col">
+                <form>
+                    <div class="form-group row">
+                        <label for="firstName" class="col-md-2 col-form-label">First Name</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First Name" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="lastName" class="col-md-2 col-form-label">Last Name</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Last Name" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="areaCode" class="col-md-2 col-form-label">Contact Tel.</label>
+                        <div class="col-5 col-md-3">
+                            <input type="tel" class="form-control" id="areaCode" name="areaCode" placeholder="Area code" />
+                        </div>
+                        <div class="col-7">
+                            <input type="tel" class="form-control" name="telNum" placeholder="Tel. number" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="email" class="col-md-2 col-form-label">Email</label>
+                        <div class="col-md-10">
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Email" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col offset-md-2">
+                            May we contact you?
+                            <div class="form-check form-check-inline">
+                                <input type="radio" class="form-check-input" id="contactYes" name="contactRadios" value="yes" />
+                                <label for="contactYes" class="form-check-label">Yes</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input type="radio" class="form-check-input" id="contactNo" name="contactRadios" value="no" />
+                                <label for="contactNo" class="form-check-label">No</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="feedback" class="col-md-2 col-form-label">Your Feedback</label>
+                        <div class="col-md-10">
+                            <textarea class="form-control" id="feedback" name="feedback" rows="8"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="offset-md-2 col-md-10">
+                            <button type="submit" class="btn btn-secondary">Pound IT</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
     
     <!-- Footer -->
     <footer class="site-footer">
-        
         <div class="container-fluid bg-light py-2">
             <div class="container ">
                 <div class="row">
-                    <div class="col-sm">
+                    <div class="col-sm ">
                         <h5>COVID Connected</h5>
                             <a class="btn btn-social-icon btn-instagram" href="https://www.instagram.com/masterdrue/" target="_blank"><i class="fa fa-instagram"></i></a>
                             <a class="btn btn-social-icon btn-facebook" href="https://www.facebook.com/masterdrue" target="_blank"><i class="fa fa-facebook"></i></a>
@@ -252,31 +389,32 @@
                             <a class="btn btn-social-icon btn-google" href="https://www.youtube.com/channel/UCX2E7jx6Cxew6-tWttcDmfw" target="_blank"><i class="fa fa-youtube"></i></a>
                             <a class="btn btn-social-icon btn-linkedin" href="https://www.linkedin.com/in/masterdrue/" target="_blank"><i class="fa fa-linkedin"></i></a>
                     </div>
-                    <div class="col-sm col-sm-auto py-2">
+                    <div class="col-sm col-sm-auto py-2 ">
                         <div class="btn-group dropup">
                             <button class="btn btn-secondary btn-sm" type="button">
                               COVID-19 Command
                             </button>
                             <button type="button" class="btn btn-sm btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              <span class="sr-only">Toggle Dropdown</span>
+                              <span class="sr-only">Toggle DropUp</span>
                             </button>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#topgrp">Top</a>
+                                <a class="dropdown-item" href="#topgrp">Home</a>
                                 <a class="dropdown-item" href="#cardgrp">Card Group</a>
                                 <a class="dropdown-item" href="#tabgrp">Data Charts</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Coming Soon</a>
+                                <a class="dropdown-item" href="#contact">Contact Us</a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm text-sm-right py-2">Footer Right</div>
+                    <div class="col-sm text-sm-right py-2">
+                        <h5>Global Awareness</h5>
+                        <a role="button" class="btn btn-link" href="https://druescloud.com" target="_blank"><i class="fa fa-globe"></i> DruesCloud.com</a>
+                    </div>
                 </div>
             </div>
-        
         </div>    
     </footer>
 
-    
     <!-- build.js js/main.js -->
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
