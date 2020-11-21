@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Bootstrap Final Project - Spock",
   "main": "index.html",
+  "homepage": "https://masterdrue.github.io/spock",
   "scripts": {
     "lite": "lite-server",
     "scss": "node-sass -o css/ css/",
