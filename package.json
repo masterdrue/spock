@@ -36,6 +36,7 @@
     "usemin-cli": "^0.5.1"
   },
   "dependencies": {
+    "bl": "^1.2.3",
     "bootstrap": "^4.0.0",
     "bootstrap-social": "^5.1.1",
     "browser-sync": "^2.26.14",
